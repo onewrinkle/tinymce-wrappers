@@ -69,7 +69,6 @@ const setup = (editor: Editor, url) => {
 
   const wrapTable = function(table, options?) {
     const parent = table.parentNode;
-    console.log(parent);
     const wrapper = document.createElement("div");
     wrapper.style.width = "100%";
     wrapper.style["overflow-x"] = "auto";
@@ -98,13 +97,11 @@ const setup = (editor: Editor, url) => {
   };
 
   const findUpClass = function(el, className) {
-    console.log(">1 el.classList", el.classList);
     if (el.classList && el.classList.contains(className)) {
       return el;
     }
     while (el.parentNode) {
       el = el.parentNode;
-      console.log("> el.classList", el.classList);
       if (el.classList && el.classList.contains(className)) {
         return el;
       }
